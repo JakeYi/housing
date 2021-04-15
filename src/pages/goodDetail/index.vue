@@ -18,92 +18,72 @@
           class="z-width-90-percent z-font-size-22 z-lineHeight-25 z-lines-2-overflow-hidden z-font-weight-bold z-padding-all-15-px"
           >{{ good.mainTitle }}</span>
 		</div>
-		<div class="ub-box z-padding-v-5-px z-padding-top-30-px" style="background:#fff">
-        <div class="list-item ub-box ub-col ub-ver" :key="key" v-for="(idx, key) in houseStyle">
-			<dd @click.stop="$openWin('/pages/error/main')" class="icon ub-box ub-ver iconfont" :class="key" >
-				{{houseStyle[key]['title']}}
-			</dd>
-          	<span class="z-padding-v-8-px z-font-size-12 z-color-red">{{houseStyle[key]['value']}}</span> 
-        </div>
-      	</div>
-		<dd class="z-width-100-percent z-box-sizing-border z-bg-color-fff z-padding-all-8-px ub-box ub-between">
-			<p class="ub-box ub-ver">
-				<i class="iconfont icon-xianshikejian z-font-size-18 z-margin-right-5-px" style="color:#06c1ae;"></i>
-				<span class="z-font-size-12 z-color-888">过期自动退</span>
-			</p>
-			<p class="ub-box ub-ver">
-				<i class="iconfont icon-yonghu z-font-size-16 z-margin-right-5-px" style="color:#888;"></i>
-				<span class="z-font-size-12 z-color-888">已售420</span>
-			</p>
-		</dd>
-		<dd class="z-margin-top-8-px z-width-100-percent z-box-sizing-border z-bg-color-fff z-padding-all-8-px ub-box ub-between" style="border-bottom: 1px solid #f5f5f5">
-			<p class="ub-box ub-ver">
-				<span class="z-font-size-13 z-color-888">
-					<star></star>
-				</span>
-			</p>
-			<p @click.stop="$openWin('/pages/comment/main')" class="ub-box ub-ver">
-				<span class="z-font-size-13 z-color-888">{{commentsNum}}条评论</span>
-				<i class="iconfont icon-xiayiyeqianjinchakangengduo z-font-size-12 z-color-888"></i>
-			</p>
-		</dd>
-		<dd class="z-width-100-percent z-box-sizing-border z-bg-color-fff  ub-box ub-wrap" style="padding:12px 8px 8px 8px">
-			<span v-for="(val, idx) in labels" :key="idx" class="label z-font-size-13" :class="{'tuijian': val.type==1, 'butuijian': val.type==0}">{{val.name}} {{val.num}}</span>
-		</dd>
-		<dd class="z-margin-top-8-px z-width-100-percent z-box-sizing-border z-bg-color-fff z-padding-all-8-px ub-box ub-between" style="border-bottom: 1px solid #f5f5f5">
-			<p class="z-font-size-14 z-color-888">商家信息</p>
-		</dd>	
-		<dd class="z-width-100-percent z-box-sizing-border z-bg-color-fff z-padding-all-8-px ub-box ub-between">
-			<p class="ub-flex-1 ub-box ub-col" style="border-right: 1px solid #eee">
-				<span class="z-font-size-14 z-lineHeight-24 z-color-333">{{sellerName}}</span>
-				<span class="z-font-size-13 z-color-999">{{sellAdress}}</span>
-			</p>
-			<p @click.stop="clickCall()" class="ub-box ub-ver z-padding-h-8-px">
-				<i class="iconfont icon-dianhua z-font-size-20" style="color:#06c1ae"></i>
-			</p>
-		</dd>
-		<dd class="z-margin-top-8-px z-width-100-percent z-box-sizing-border z-bg-color-fff z-padding-all-8-px ub-box ub-between" style="border-bottom: 1px solid #f5f5f5">
-			<p class="z-font-size-14 z-color-888">套餐</p>
-		</dd>	
-		<dd class="z-width-100-percent z-box-sizing-border z-bg-color-fff z-padding-all-8-px ub-box ub-between" style="border-bottom: 1px solid #f5f5f5">
-			<p class="z-font-size-14 z-color-333">{{package.packageName}}</p>
-			<p class="ub-box">
-				<span class="z-font-size-14 z-color-333 z-margin-right-5-px">1位</span>
-				<span class="z-font-size-14 z-color-333">¥{{normalPrice}}</span>
-			</p>
-		</dd>
-		<dd class="z-width-100-percent z-box-sizing-border z-bg-color-fff z-padding-all-8-px ub-box ub-ver" style="border-bottom: 1px solid #f5f5f5">
-			<p class="z-font-size-14 z-color-888">备注</p>
-		</dd>
-		<dd class="z-width-100-percent z-box-sizing-border z-bg-color-fff z-padding-all-8-px ub-box ub-col">
-			<ul class="ub-box ub-col">
-				<li v-for="(val, idx) in package.notes" :key="idx" class="z-font-size-14 z-color-333 z-box-sizing-border z-lineHeight-24">{{val}}</li>
+		<div class="z-width-100-percent ub-box ub-ver-h">
+			<div class="ub-box z-margin-v-5-px z-padding-top-30-px z-width-90-percent" style="background:#fff">
+			<div class="list-item ub-box ub-col ub-ver z-padding-v-10-px z-color-888 z-border-top-1-d7d7d7 z-border-bottom-1-d7d7d7  z-height-50-px " :key="key" v-for="(idx, key) in houseStyle">
+				<div class='house-box z-border-right-1-d7d7d7 z-width-90-percent' >
+					<div @click.stop="$openWin('/pages/error/main')" class="icon ub-box ub-ver z-font-size-12 " :class="key" >
+					{{houseStyle[key]['title']}}
+					</div>
+					<div class="z-padding-v-4-px ub-box ub-ver z-font-size-16 z-color-red">{{houseStyle[key]['value']}}</div> 
+				</div>
+			</div>
+			</div>
+		</div>
+		<dd class="z-width-100-percent z-box-sizing-border z-bg-color-fff z-padding-all-20-px ub-box ub-row">
+			<ul class="ub-box ub-col ub z-width-50-percent" >
+				<li class='z-padding-all-10-px' >
+					<span class='z-color-999'>单价:</span>
+					<span class='z-padding-left-5-px'>{{houseDetail.sales}}元/平</span>
+				</li>
+				<li class='z-padding-all-10-px'>
+					<span class='z-color-999'>朝向:</span>
+					<span class='z-padding-left-5-px'>{{houseDetail.direction}}</span>
+				</li>
+				<li class='z-padding-all-10-px'>
+					<span class='z-color-999'>楼型:</span>
+					<span class='z-padding-left-5-px'>{{houseDetail.style}}</span>
+				</li>
+				<li class='z-padding-all-10-px'>
+					<span class='z-color-999'>装修:</span>
+					<span class='z-padding-left-5-px'>{{houseDetail.decoration}}</span>
+				</li>
+				<li class='z-padding-all-10-px'>
+					<span class='z-color-999'>用途:</span>
+					<span class='z-padding-left-5-px'>{{houseDetail.use}}</span>
+				</li>
+			</ul>
+			<ul class="ub-box ub-col ub z-width-50-percent" >
+				<li class='z-padding-all-10-px'>
+					<span class='z-color-999'>挂牌:</span>
+					<span class='z-padding-left-5-px'>{{houseDetail.data}}</span>
+				</li>
+				<li class='z-padding-all-10-px'>
+					<span class='z-color-999'>楼层:</span>
+					<span class='z-padding-left-5-px'>{{houseDetail.floor}}</span>
+				</li>
+				<li class='z-padding-all-10-px'>
+					<span class='z-color-999'>电梯:</span>
+					<span class='z-padding-left-5-px'>{{houseDetail.elevator}}</span>
+				</li>
+				<li class='z-padding-all-10-px'>
+					<span class='z-color-999'>年代:</span>
+					<span class='z-padding-left-5-px'>{{houseDetail.age}}</span>
+				</li>
+				<li class='z-padding-all-10-px'>
+					<span class='z-color-999'>权属:</span>
+					<span class='z-padding-left-5-px'>{{houseDetail.belongs}}</span>
+				</li>
 			</ul>
 		</dd>
-		<dd class="z-margin-top-8-px z-width-100-percent z-box-sizing-border z-bg-color-fff z-padding-all-8-px ub-box ub-between" style="border-bottom: 1px solid #f5f5f5">
-			<p class="z-font-size-14 z-color-888">购买须知</p>
-		</dd>	
-		<dd class="z-width-100-percent z-box-sizing-border z-bg-color-fff z-padding-all-8-px ub-box ub-col">
-			<p class="z-font-size-14 z-lineHeight-30" style="color:#f90">有效期</p>
-			<p class="z-font-size-14 z-color-888">{{purchaseInfo.validityDate}}</p>
-			<p class="z-font-size-14 z-lineHeight-30" style="color:#f90">不可用日期</p>
-			<p class="z-font-size-14 z-color-888">{{purchaseInfo.unavailableDate}}</p>
-			<p class="z-font-size-14 z-lineHeight-30" style="color:#f90">使用规则</p>
-			<ul class="ub-box ub-col" >
-				<li v-for="(val, idx) in purchaseInfo.rules" :key="idx" class="z-font-size-14 z-color-888 z-box-sizing-border z-lineHeight-24">{{val}}</li>
-			</ul>
-		</dd>
-		<dd class="z-margin-top-8-px z-width-100-percent z-box-sizing-border z-bg-color-fff z-padding-all-8-px ub-box ub-between" style="border-bottom: 1px solid #f5f5f5">
-			<p class="ub-box ub-ver">
-				<span class="z-font-size-14 z-color-888">
-					<star></star>
-				</span>
-			</p>
-			<p @click.stop="$openWin('/pages/comment/main')" class="ub-box ub-ver">
-				<span class="z-font-size-14 z-color-888">{{commentsNum}}条评论</span>
-				<i class="iconfont icon-xiayiyeqianjinchakangengduo z-font-size-12 z-color-888"></i>
-			</p>
-		</dd>
+		<dd>
+		<map id="myMap" style="width: 100%; height: 300px;"
+			:latitude="location.latitude"
+			:longitude="location.longitude"
+			:markers="location.markers"
+			show-location
+			@click="openMap"
+		></map>
 		<dd class="z-box-sizing-border z-bg-color-fff z-padding-all-8-px ub-box ub-between">
 			<ul class="ub-flex-1 ub-box ub-col">
 				<li v-for="(val, idx) in comments" :key="idx" class="z-border-bottom-1-eee">
@@ -118,14 +98,12 @@
 			<p class="ub-box ub-ver">
 				<i class="iconfont icon-xiayiyeqianjinchakangengduo z-font-size-13 z-color-888"></i>
 			</p>
-		</dd>
-		<dd class="z-margin-top-8-px z-width-100-percent z-box-sizing-border z-bg-color-fff z-padding-all-8-px ub-box ub-between" style="border-bottom: 1px solid #f5f5f5">
-			<p class="z-font-size-14 z-color-888">相关推荐</p>
-		</dd>
-		<dd class="z-width-100-percent z-box-sizing-border z-bg-color-fff z-padding-all-8-px ub-box ub-col">
-        	<Recommend v-for="(val, idx) in 2" :key="idx" :isLast="idx==1" />
-        </dd>								
+		</dd>				
 	  </dl>
+	  <div class='bottom-tab z-width-100-percent z-height-60-px ub-box ub-ver z-bg-color-fff z-border-right-0-5-d7d7d7'>
+		  <!-- <span>关注</span> -->
+		  <div class='z-width-70-percent z-height-50-px z-border-radius-5 z-bg-color-11b8ae z-color-fff ub-box ub-ver z-font-size-20 '>咨询经纪人</div>
+	  </div>
 	</scroll-view>
   </div>
 </template>
@@ -137,6 +115,16 @@
 		components: {recommend, star, comment},
 	  	data () {
 			return {
+				location: {
+					latitude: 23.099994,
+					longitude: 113.324520,
+					markers: [{
+						id: 1,
+						latitude: 23.099994,
+						longitude: 113.324520,
+						name: 'T.I.T 创意园'
+					}]
+				},
 				houseStyle: {
 					'sales': {title: '售价', value: '227w'},
 					'type': {title: '房型', value: '3室2厅'},
@@ -165,32 +153,17 @@
 				],
 				mainTitle: '详情页面',
 				subTitle: '单人自助晚餐',
-				nowPrice: '308',
-				normalPrice: '398',
-				labels: [
-					{name: '海鲜棒', num: '202', type: '1'}, 
-					{name: '回头客', num: '97', type: '1'},
-					{name: '干净卫生', num: '40', type: '1'}, 
-					{name: '上菜快', num: '22', type: '1'},
-					{name: '不推荐', num: '29', type: '0'},
-					{name: '家庭聚餐', num: '13', type: '0'},
-					{name: '朋友聚餐', num: '9', type: '0'}, 
-					{name: '闺蜜聚会', num: '5', type: '0'},
-					{name: '现做现卖', num: '4', type: '0'}, 
-					{name: '请客', num: '4', type: '0'},
-				],
-				sellerName: '索菲特大酒店锦厨国际餐厅自助餐',
-				sellAdress: '西山区环城南路777号昆明索菲特大酒店49楼',
-				package: {
-					packageName: '单人自助晚餐',
-					notes: [
-						'单人自助晚餐：周一至周四18:00-21:00',
-						'餐厅预定入口: https://tableplus.accorplus.com?vc=KweeZeenRestaurantAccorASE1187',
-						'锦厨国际餐厅位于昆明索菲特大酒店49楼，能够360度鸟瞰春城美景。',
-						'我们为您提供400种以上的餐食自助，全场酒水畅饮，包括葡萄酒、各色软饮及果汁。',
-						'更有专属定制化服务：凡周年纪念日/生日当天到店就餐的客人，将免费提供蛋糕一个(此项仅针对提前至少一天进行预约并说明过情况的客人。)',
-						'温馨提示：儿童按身高收费，具体是0-110cm儿童免费；110cm-140cm儿童半价；140cm以上的全价。 另：如遇特殊活动时，需根据店里实际情况按实际价格补差价。',
-					],
+				houseDetail: {
+					'sales': 42528,
+					'direction': '南',
+					'style':  '塔楼',
+					'decoration': '精装',
+					'use': '普通住宅',
+					'data': '2020.11.14',
+					'floor': '低楼层/60',
+					'elevator':  '有电梯',
+					'age': '2015年',
+					'belongs': '商品房'
 				},
 				purchaseInfo: {
 					validityDate: '2016.2.5 至 2018.6.14',
@@ -208,28 +181,26 @@
 				commentsNum: 6,
 				comments: [
 					{
-						header: 'https://img.meituan.net/avatar/855458f5c24ab19951f382ee99533ad981495.jpg@37w_37h_1e_1c',
-						name: 'AqU753874254',
-						time: '2018-05-07', 
-						star: '4.0',
-						say: '菜品很多，强烈推荐龙虾，超级棒！每次来都吃撑！很满意的一家自主餐！生日当天海送了蛋糕、服务员“代玉琳”美女，服务态度超级好，热情，人也长的美美哒，给她一个赞！ ', 
+						header: 'https://i.pinimg.com/originals/1d/90/00/1d9000c7502195316846ff6b02e3f51c.png',
+						name: '唐炳强',
+						time: '2020-05-07', 
+						say: '周边配套:保利水城、万达广场，金融高新区，保利西街，千灯湖公园，省中西医结合医院，桂城医院，南海人民医院、中国银行、农业银行、工商银行、建设银行 ', 
 						imgs: [
-							'http://p0.meituan.net/shaitu/40b07a385f90bca838efa48a911bf491253024.jpg',
-							'http://p0.meituan.net/shaitu/f6af829ff902040fb3225643b2775c1f111115.jpg',
-							'http://p0.meituan.net/shaitu/e96132da9f76af022d6e521b2265ad70204304.jpg',
-							'http://p0.meituan.net/shaitu/307d287b8d55f1d67dab188502a684ec158341.jpg',
+							'https://image1.ljcdn.com/110000-inspection/pc1_AsJbUBZ7E_1.jpg.710x400.jpg',
+							'https://image1.ljcdn.com/110000-inspection/apc_vGXkjfrOT_1.jpg.710x400.jpg',
+							'https://image1.ljcdn.com/110000-inspection/pc0_LkQcqNAVD_1.jpg.710x400.jpg',
 						]
 					},
 					{
-						header: 'https://p0.meituan.net/122.74/mmc/35ad1f9253761ea6ff822b5e659f234f3758.png',
-						name: 'PPL546030823',
-						time: '2018-05-06', 
+						header: 'https://i.pinimg.com/originals/1d/90/00/1d9000c7502195316846ff6b02e3f51c.png',
+						name: '王梓林',
+						time: '2021-02-06', 
 						star: '4.5',
-						say: '环境很好，有昆明的夕阳相伴，谢谢美女服务员代玉琳的热忱服务，度过和朋友悠闲的晚餐时光🎈 #煎鹅肝# ', 
+						say: '房子是精装的，中高楼层，视野开阔，业主诚心卖，本人对小区熟悉，欢迎咨询', 
 						imgs: [
-							'http://p0.meituan.net/400.0/shaitu/bc52b03f7f091d6711b8a1ec024a0e6a83730.jpg',
-							'http://p0.meituan.net/400.0/shaitu/053247a6b8ede53824435f23196971d2124167.jpg',
-							'http://p0.meituan.net/400.0/shaitu/0783b3f70ab47607593dcba906c7d570147806.jpg',
+							'https://image1.ljcdn.com/110000-inspection/pc1_XMN8x7axM_1.jpg.710x400.jpg',
+							'https://image1.ljcdn.com/110000-inspection/pc0_0PqxhnDhz_1.jpg.710x400.jpg',
+							'https://image1.ljcdn.com/110000-inspection/pc0_LkQcqNAVD_1.jpg.710x400.jpg'
 
 						]
 					},
@@ -239,6 +210,20 @@
 		methods: {
 			previewImage(imgs, curIdx){
 				wx.previewImage({current: imgs[curIdx], urls: [imgs[curIdx]]})
+			},
+			openMap(){
+				wx.getLocation({
+					type: 'gcj02', //返回可以用于wx.openLocation的经纬度
+					success (res) {
+						const latitude = res.latitude
+						const longitude = res.longitude
+						wx.openLocation({
+							latitude,
+							longitude,
+							scale: 18
+						})
+					}
+				})
 			},
 			clickCall() {
 		      wx.showActionSheet({
@@ -268,8 +253,14 @@
 }
 .list-item {
   width:33%;
-  padding: 10px 13px 0 13px;
   box-sizing: border-box;
+}
+.list-item:last-child .house-box{
+	border-right: none;
+}
+.bottom-tab {
+	position: fixed;
+	bottom: 0;
 }
   .container{width:100%;height:100vh;background:#fff}
   .indexImg{height: 170px;position: relative;}

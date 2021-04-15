@@ -14,7 +14,7 @@
     <!-- 列表 -->
     <div class="ub-box z-padding-v-5-px z-padding-top-30-px" style="background:#fff">
         <div class="list-item ub-box ub-col ub-ver" :key="key" v-for="(idx, key) in iconMap">
-          <dd @click.stop="$openWin('/pages/error/main')" class="icon ub-box ub-ver iconfont" :class="key" :style="{background: iconMap[key]['bk']}"></dd>
+          <dd @click="search(key)" class="icon ub-box ub-ver iconfont" :class="key" :style="{background: iconMap[key]['bk']}"></dd>
           <span class="z-padding-v-8-px z-font-size-12 z-color-333">{{iconMap[key]['title']}}</span> 
         </div>
       </div>
@@ -40,7 +40,21 @@ export default {
   methods: {
     previewImage(imgs, curIdx){
 				wx.previewImage({current: imgs[curIdx], urls: [imgs[curIdx]]})
-		}
+		},
+    search(key) {
+      console.log(key)
+        switch(key) {
+          case 'icon-secondhouse' :
+            wx.navigateTo({url: '/pages/secondHandHouse/main'})
+            break
+          case 'icon-newhouse' :
+            wx.navigateTo({url: '/pages/newHouse/main'})
+            break
+          case 'icon-renthouse' :
+            wx.navigateTo({url: '/pages/rentHouse/main'})
+            break
+        }
+    }
   },
   data () {
     return {
